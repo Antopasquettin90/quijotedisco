@@ -1,14 +1,18 @@
-import React, {useContext, useState} from 'react';
-import {Link, useNavigate} from 'react-router-dom';
+import React, { useContext, useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 import './cartstyles.css';
-import {CartContext} from '../../Context/CartContext';
+import { CartContext } from '../../Context/CartContext';
 import CartItem from './CartItem';
 
 const Carrito = () => {
-  const {cartItems, removeFromCart, clearCart, calculateTotal} =
-    useContext(CartContext);
+  const { cartItems, addToCart, removeFromCart, clearCart, calculateTotal } = useContext(CartContext);
   const navigate = useNavigate();
   const [isCompraFinalizada, setCompraFinalizada] = useState(false);
+  const total = calculateTotal();
+
+  const handleAddToCart = (product) => {
+    addToCart(product);
+  };
 
   const handleFinalizarCompra = () => {
     // Lógica para finalizar la compra
@@ -25,11 +29,21 @@ const Carrito = () => {
   return (
     <div className='container'>
       <h2 className='titulo-carrito'>Carrito de compras</h2>
-      {cartItems.length > 0 ? (
+      {Object.keys(cartItems).length > 0 ? (
         <div>
-          {cartItems.map((item) => (
-            <CartItem key={item.id} item={item} removeItem={removeFromCart} />
-          ))}
+          {Object.keys(cartItems).map((productId) => {
+            const item = cartItems[productId];
+            return (
+              <CartItem
+                key={productId}
+                item={item}
+                removeItem={removeFromCart}
+              />
+            );
+          })}
+          <hr />
+          <p className='text-white text-center fs-3'>Total: {total}</p>
+          <hr />
           <div className='buttons-container'>
             <button
               className='btn btn-outline-secondary border-0 text-white'
@@ -60,8 +74,7 @@ const Carrito = () => {
             <div>
               <h3>¡Compra finalizada!</h3>
               <p>
-                Gracias por tu compra. Recibirás un correo electrónico con los
-                detalles de tu pedido.
+                Gracias por tu compra. Recibirás un correo electrónico con los detalles de tu pedido.
               </p>
             </div>
           ) : null}

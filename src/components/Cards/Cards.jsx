@@ -14,15 +14,12 @@ const productDetails = {
     description: 'Descripción del evento 1',
     prices: {
       general: 800,
-      vip: 2000
     },
     quantity: {
       general: 800,
-      vip: 50
     },
     initialQuantity: {
       general: 800,
-      vip: 50
     }
   },
   'producto-2': {
@@ -34,15 +31,12 @@ const productDetails = {
     description: 'Descripción del evento 2',
     prices: {
       general: 2000,
-      vip: 4000
     },
     quantity: {
       general: 900,
-      vip: 400
     },
     initialQuantity: {
       general: 900,
-      vip: 400
     }
   },
   'producto-3': {
@@ -54,15 +48,12 @@ const productDetails = {
     description: 'Descripción del evento 3',
     prices: {
       general: 800,
-      vip: 2000
     },
     quantity: {
       general: 500,
-      vip: 100
     },
     initialQuantity: {
       general: 500,
-      vip: 100
     }
   },
   'producto-4': {

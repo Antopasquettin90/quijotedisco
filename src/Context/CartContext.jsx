@@ -1,9 +1,11 @@
-import React, {createContext, useState} from 'react';
+import React, { createContext, useState } from 'react';
 
 export const CartContext = createContext();
+const { Provider } = CartContext;
+
 export const useCart = () => React.useContext(CartContext);
 
-const CartProvider = ({children}) => {
+const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
 
   const addToCart = (product) => {
@@ -28,11 +30,11 @@ const CartProvider = ({children}) => {
   };
 
   return (
-    <CartContext.Provider
-      value={{cartItems, addToCart, removeFromCart, clearCart, calculateTotal}}
+    <Provider
+      value={{ cartItems, addToCart, removeFromCart, clearCart, calculateTotal }}
     >
       {children}
-    </CartContext.Provider>
+    </Provider>
   );
 };
 

@@ -3,16 +3,24 @@ import PropTypes from 'prop-types';
 
 const CartItem = ({ item, removeItem }) => {
   const handleRemoveItem = () => {
-    removeItem(item.id);
+    removeItem(item.productId);
   };
 
   return (
-    <div className="card">
-      <div className="card-body">
-        <h5 className="card-title">{item.title}</h5>
-        <p className="card-text">Precio: {item.price}</p>
-        <p className="card-text">Cantidad: {item.quantity}</p>
-        <button className="btn btn-danger" onClick={handleRemoveItem}>Eliminar</button>
+    <div className="col-md-4">
+      <div className="card" style={{ width: '18rem' }}>
+        <ul className="list-group list-group-flush">
+          <li className="list-group-item">
+            <h5>{item.title}</h5>
+          </li>
+          <li className="list-group-item">Precio: {item.price}</li>
+          <li className="list-group-item">Cantidad: {item.quantity}</li>
+        </ul>
+        <div className="card-body">
+          <button className="btn btn-danger" onClick={handleRemoveItem}>
+            Eliminar
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -1,10 +1,10 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
-import {useCart} from '../../Context/CartContext';
+import { Link } from 'react-router-dom';
+import { useCart } from '../../Context/CartContext';
 import './cartstyles.css';
 
 const CartWidget = () => {
-  const {cartItems} = useCart();
+  const { cartItems } = useCart();
 
   const getTotalQuantity = () => {
     return cartItems.reduce((total, item) => total + item.quantity, 0);
