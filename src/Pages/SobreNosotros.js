@@ -7,7 +7,10 @@ const SobreNosotros = () => {
   return (
     <div>
       <div>
-        <h2 className="text-center titulos color-titulos tamaños-titulos-grandes">EL BAR</h2>
+        <h2 
+        className="text-center titulos color-titulos tamaños-titulos-grandes">
+          EL BAR
+          </h2>
       </div>
 
       <div className="container-fluid text-center tamaños-letras-chicos">
@@ -53,7 +56,20 @@ const SobreNosotros = () => {
           <div className="col roll-in-right">
             <img src={gin} height="250px" width="400px" className="rounded mx-auto d-block" alt="Gin" />
           </div>
+          <div className="col">
         </div>
+        <hr className="text-warning borde m-5" />
+          <h2 
+        className="text-center titulos color-titulos tamaños-titulos-grandes">
+          La disco
+          </h2>
+            <p className="mt-5 tamaños-letras-chicas text-white text-center text-focus-in">
+              La discoteca y el bar más emblemáticos de Villa Huidobro y la zona, donde se combinan
+              patrimonio, música, buena gastronomía y coctelería. Una mezcla eléctrica de
+              autenticidad, espontaneidad, diversión y prestigio. Desde 1993, Quijote ha sido el
+              pionero del movimiento cultural, musical y gastronómico.
+            </p>
+          </div>
       </div>
     </div>
   );
