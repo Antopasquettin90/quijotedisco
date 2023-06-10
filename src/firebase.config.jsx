@@ -1,9 +1,6 @@
-// Importa las funciones que necesitas de los SDK que necesitas
-import { initializeApp } from "firebase/app";
-import { getAnalytics } from "firebase/analytics";
-import { getFirestore } from "firebase/firestore"; // Agrega esta línea para importar Firestore
+import { initializeApp } from 'firebase/app';
+import { getFirestore } from 'firebase/firestore';
 
-// Tu configuración de Firebase para la aplicación web
 const firebaseConfig = {
   apiKey: "AIzaSyC6u0_zoRV78DgA5MYJW_dl0lAHjnvhTRM",
   authDomain: "quijotedisco-9fbf6.firebaseapp.com",
@@ -14,9 +11,7 @@ const firebaseConfig = {
   measurementId: "G-H7RM2FBB7L"
 };
 
-// Inicializa Firebase
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
-const db = getFirestore(app); // Agrega esta línea para obtener una instancia de Firestore
+const db = getFirestore(app);
 
-export { app, analytics, db }; // Exporta los servicios que desees utilizar en tu aplicación
+export { app, db };

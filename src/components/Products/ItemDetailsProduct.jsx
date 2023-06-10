@@ -11,19 +11,73 @@ const productDetails = {
     image: image1,
     url: 'producto-1',
     category: 'Julio',
-    description: 'Descripción del evento 1',
+    description: '¡No te pierdas la experiencia inigualable en QUIJOTE DISCO VILLA HUIDOBRO con nuestra entrada Obtene acceso a nuestra pista de baile, el bar y zonas de descanso. Además, tu entrada incluye una consumición para que disfrutes de una refrescante bebida mientras bailas al ritmo de la mejor música. Además, si hay un espectáculo especial esa noche, tendrás derecho a presenciarlo y deleitarte con una experiencia única. ¡Compra tu entrada ahora y prepárate para una noche llena de diversión y entretenimiento en uno de los mejores boliches de Villa Huidobro!',
     price: 800,
     quantity: 800,
     initialQuantity: 800,
   },
-  // Resto de los productos...
+  'producto-2': {
+    id: 2,
+    title: 'Sabado 15/07/2023',
+    image: image1,
+    url: 'producto-2',
+    category: 'Julio',
+    description: '¡No te pierdas la experiencia inigualable en QUIJOTE DISCO VILLA HUIDOBRO con nuestra entrada Obtene acceso a nuestra pista de baile, el bar y zonas de descanso. Además, tu entrada incluye una consumición para que disfrutes de una refrescante bebida mientras bailas al ritmo de la mejor música. Además, si hay un espectáculo especial esa noche, tendrás derecho a presenciarlo y deleitarte con una experiencia única. ¡Compra tu entrada ahora y prepárate para una noche llena de diversión y entretenimiento en uno de los mejores boliches de Villa Huidobro!',
+    price: 2000,
+    quantity: 900,
+    initialQuantity: 900,
+  },
+  'producto-3': {
+    id: 3,
+    title: 'Sabado 5/08/2023',
+    image: image1,
+    url: 'producto-3',
+    category: 'Agosto',
+    description: '¡No te pierdas la experiencia inigualable en QUIJOTE DISCO VILLA HUIDOBRO con nuestra entrada Obtene acceso a nuestra pista de baile, el bar y zonas de descanso. Además, tu entrada incluye una consumición para que disfrutes de una refrescante bebida mientras bailas al ritmo de la mejor música. Además, si hay un espectáculo especial esa noche, tendrás derecho a presenciarlo y deleitarte con una experiencia única. ¡Compra tu entrada ahora y prepárate para una noche llena de diversión y entretenimiento en uno de los mejores boliches de Villa Huidobro!',
+    price: 800,
+    quantity: 500,
+    initialQuantity: 500,
+  },
+  'producto-4': {
+    id: 4,
+    title: 'Sabado 12/08/2023',
+    image: image1,
+    url: 'producto-4',
+    category: 'Agosto',
+    description: '¡No te pierdas la experiencia inigualable en QUIJOTE DISCO VILLA HUIDOBRO con nuestra entrada Obtene acceso a nuestra pista de baile, el bar y zonas de descanso. Además, tu entrada incluye una consumición para que disfrutes de una refrescante bebida mientras bailas al ritmo de la mejor música. Además, si hay un espectáculo especial esa noche, tendrás derecho a presenciarlo y deleitarte con una experiencia única. ¡Compra tu entrada ahora y prepárate para una noche llena de diversión y entretenimiento en uno de los mejores boliches de Villa Huidobro!',
+    price: 3000,
+    quantity: 500,
+    initialQuantity: 500,
+  },
+  'producto-5': {
+    id: 5,
+    title: 'Sabado 2/09/2023',
+    image: image1,
+    url: 'producto-5',
+    category: 'Septiembre',
+    description: '¡No te pierdas la experiencia inigualable en QUIJOTE DISCO VILLA HUIDOBRO con nuestra entrada Obtene acceso a nuestra pista de baile, el bar y zonas de descanso. Además, tu entrada incluye una consumición para que disfrutes de una refrescante bebida mientras bailas al ritmo de la mejor música. Además, si hay un espectáculo especial esa noche, tendrás derecho a presenciarlo y deleitarte con una experiencia única. ¡Compra tu entrada ahora y prepárate para una noche llena de diversión y entretenimiento en uno de los mejores boliches de Villa Huidobro!',
+    price: 1500,
+    quantity: 1000,
+    initialQuantity: 1000,
+  },
+  'producto-6': {
+    id: 6,
+    title: 'Sabado 9/09/2023',
+    image: image1,
+    url: 'producto-6',
+    category: 'Septiembre',
+    description: '¡No te pierdas la experiencia inigualable en QUIJOTE DISCO VILLA HUIDOBRO con nuestra entrada Obtene acceso a nuestra pista de baile, el bar y zonas de descanso. Además, tu entrada incluye una consumición para que disfrutes de una refrescante bebida mientras bailas al ritmo de la mejor música. Además, si hay un espectáculo especial esa noche, tendrás derecho a presenciarlo y deleitarte con una experiencia única. ¡Compra tu entrada ahora y prepárate para una noche llena de diversión y entretenimiento en uno de los mejores boliches de Villa Huidobro!',
+    price: 4000,
+    quantity: 700,
+    initialQuantity: 700,
+  },
 };
 
 const ItemDetailsProduct = () => {
   const { id } = useParams();
   const selectedProduct = productDetails[id];
   const [quantity, setQuantity] = useState(1);
-  const { addToCart, cartItems, removeFromCart } = useCart();
+  const { addToCart, cartItems } = useCart();
 
   useEffect(() => {
     return () => {
@@ -61,46 +115,55 @@ const ItemDetailsProduct = () => {
     }
   };
 
-  const handleRemoveFromCart = () => {
-    removeFromCart(selectedProduct.url);
-    updateStock(-quantity); // Restablecer el stock del producto al carrito
-  };
-
   return (
-    <div className="letras">
+    <div className='letras'>
       {selectedProduct ? (
         <div>
-          <h2 className="titulo-producto">
-            Detalles del producto con ID: {id}
-          </h2>
-          <div className="product-details">
-            <div className="product-image">
+          <h2 className='titulo-producto'>Entradas:</h2>
+          <div className='product-details'>
+            <div className='product-image'>
               <img
                 src={selectedProduct.image}
                 alt={selectedProduct.title}
-                className="small-image"
+                className='small-image'
               />
             </div>
-            <div className="product-info">
+            <div className='product-info'>
               <p>Precio: ${selectedProduct.price}</p>
               <p>Stock disponible: {selectedProduct.quantity}</p>
-              <p>Descripción: {selectedProduct.description}</p>
               <div>
                 <label>Cantidad:</label>
-                <button onClick={() => handleQuantityChange(-1)}>-</button>
+                <button
+                  className='btn btn-danger color-boton'
+                  onClick={() => handleQuantityChange(-1)}
+                >
+                  -
+                </button>
                 <input
-                  type="number"
-                  min="1"
+                  type='number'
+                  min='1'
                   value={quantity}
                   onChange={(e) => setQuantity(parseInt(e.target.value))}
                 />
-                <button onClick={() => handleQuantityChange(1)}>+</button>
+                <button
+                  className='btn btn-danger color-boton'
+                  onClick={() => handleQuantityChange(1)}
+                >
+                  +
+                </button>
               </div>
-              <button onClick={handleAddToCart}>Agregar al carrito</button>
-              <button onClick={handleRemoveFromCart}>Eliminar del carrito</button>
+              <button
+                className='btn btn-danger color-boton'
+                onClick={handleAddToCart}
+              >
+                Agregar al carrito
+              </button>
             </div>
           </div>
-          <Link to="/">Volver a la página principal</Link>
+          <p className='p-3'>Descripción: {selectedProduct.description}</p>
+          <Link className='btn btn-danger color-boton' to='/'>
+            Volver a la página principal
+          </Link>
         </div>
       ) : (
         <div>

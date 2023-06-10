@@ -1,5 +1,6 @@
 body { 
-    background-color: #070024 !important; }
+    background-color: #070024 !important;
+  margin: 0; }
 
 h1 {
     color: white; 
@@ -9,7 +10,7 @@ h1 {
     color: white}
 
 .titulo-producto{
-    color:green}
+    color:rgb(156, 3, 3)}
 
 .product-details {
     display: flex;
@@ -18,11 +19,11 @@ h1 {
   }
   
   .product-image {
-    flex: 0 0 30%;
+    flex: 0 0 70%;
   }
   
   .product-image img {
-    max-width: 200px;
+    max-width: 500px;
   }
   
   .product-info {
@@ -30,11 +31,11 @@ h1 {
   }
   
   .product-info p {
-    margin-bottom: 10px;
+    margin-bottom: 30px;
   }
   
   .product-info select {
-    margin-bottom: 10px;
+    margin-bottom: 20px;
   }
   
   .product-info div {
@@ -54,7 +55,7 @@ h1 {
   }
   
   .product-info button {
-    padding: 5px 10px;
-    margin: 0 5px;
+    padding: 2px 2px;
+    margin: 0 px;
   }
   

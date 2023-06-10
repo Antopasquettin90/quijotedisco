@@ -11,7 +11,7 @@ const productDetails = {
     image: image1,
     url: 'producto-1',
     category: 'Julio',
-    description: 'Descripción del evento 1',
+    description: 'Entrada general para QUIJOTE DISCO VILLA HUIDOBRO. Incluye consumición',
     prices: {
       general: 800,
     },
@@ -28,7 +28,7 @@ const productDetails = {
     image: image1,
     url: 'producto-2',
     category: 'Julio',
-    description: 'Descripción del evento 2',
+    description: 'Entrada general para QUIJOTE DISCO VILLA HUIDOBRO. Incluye consumición',
     prices: {
       general: 2000,
     },
@@ -45,7 +45,7 @@ const productDetails = {
     image: image1,
     url: 'producto-3',
     category: 'Agosto',
-    description: 'Descripción del evento 3',
+    description: 'Entrada general para QUIJOTE DISCO VILLA HUIDOBRO. Incluye consumición',
     prices: {
       general: 800,
     },
@@ -62,18 +62,15 @@ const productDetails = {
     image: image1,
     url: 'producto-4',
     category: 'Agosto',
-    description: 'Descripción del evento 4',
+    description: 'Entrada general para QUIJOTE DISCO VILLA HUIDOBRO. Incluye consumición',
     prices: {
       general: 3000,
-      vip: 6000
     },
     quantity: {
       general: 500,
-      vip: 100
     },
     initialQuantity: {
       general: 500,
-      vip: 100
     }
   },
   'producto-5': {
@@ -82,18 +79,15 @@ const productDetails = {
     image: image1,
     url: 'producto-5',
     category: 'Septiembre',
-    description: 'Descripción del evento 5',
+    description: 'Entrada general para QUIJOTE DISCO VILLA HUIDOBRO. Incluye consumición',
     prices: {
       general: 1500,
-      vip: 3000
     },
     quantity: {
       general: 1000,
-      vip: 200
     },
     initialQuantity: {
       general: 1000,
-      vip: 200
     }
   },
   'producto-6': {
@@ -102,18 +96,15 @@ const productDetails = {
     image: image1,
     url: 'producto-6',
     category: 'Septiembre',
-    description: 'Descripción del evento 6',
+    description: 'Entrada general para QUIJOTE DISCO VILLA HUIDOBRO. Incluye consumición',
     prices: {
       general: 4000,
-      vip: 8000
     },
     quantity: {
       general: 700,
-      vip: 150
     },
     initialQuantity: {
       general: 700,
-      vip: 150
     }
   }
 };
@@ -129,7 +120,6 @@ const ItemDetailsProduct = () => {
           <h2 className='titulo-producto'>Detalles del producto con ID: {id}</h2>
           <p>ID: {selectedProduct.id}</p>
           <p>Precio General: {selectedProduct.prices.general}</p>
-          <p>Precio VIP: {selectedProduct.prices.vip}</p>
           <p>Stock disponible: {selectedProduct.quantity.general}</p>
           <p>Descripción: {selectedProduct.description}</p>
         </div>

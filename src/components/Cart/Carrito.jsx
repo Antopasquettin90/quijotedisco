@@ -5,14 +5,10 @@ import { CartContext } from '../../Context/CartContext';
 import CartItem from './CartItem';
 
 const Carrito = () => {
-  const { cartItems, addToCart, removeFromCart, clearCart, calculateTotal } = useContext(CartContext);
+  const { cartItems, removeFromCart, clearCart, calculateTotal } = useContext(CartContext);
   const navigate = useNavigate();
   const [isCompraFinalizada, setCompraFinalizada] = useState(false);
   const total = calculateTotal();
-
-  const handleAddToCart = (product) => {
-    addToCart(product);
-  };
 
   const handleFinalizarCompra = () => {
     // Lógica para finalizar la compra
@@ -29,42 +25,35 @@ const Carrito = () => {
   return (
     <div className='container'>
       <h2 className='titulo-carrito'>Carrito de compras</h2>
-      {Object.keys(cartItems).length > 0 ? (
+      {cartItems.length > 0 ? (
         <div>
-          {Object.keys(cartItems).map((productId) => {
-            const item = cartItems[productId];
-            return (
-              <CartItem
-                key={productId}
-                item={item}
-                removeItem={removeFromCart}
-              />
-            );
-          })}
-          <hr />
-          <p className='text-white text-center fs-3'>Total: {total}</p>
-          <hr />
-          <div className='buttons-container'>
+          {cartItems.map((item) => (
+            <CartItem key={item.id} item={item} removeItem={removeFromCart} />
+            ))}
+            <hr />
+            <p className='text-white fs-3 text-center'>Total: {total}</p>
+            <hr />
+          <div className='buttons-container text-center'>
             <button
-              className='btn btn-outline-secondary border-0 text-white'
+              className='btn btn-danger color-boton'
               onClick={clearCart}
             >
               Vaciar el carrito
             </button>
             <Link
-              className='btn btn-outline-secondary border-0 text-white'
+              className='btn btn-danger color-boton'
               to='/compratusentradas'
             >
               Seguir comprando
             </Link>
             <button
-              className='btn btn-outline-secondary border-0 text-white'
+              className='btn btn-danger color-boton'
               onClick={handleFinalizarCompra}
             >
               Finalizar Compra
             </button>
             <button
-              className='btn btn-outline-secondary border-0 text-white'
+              className='btn btn-danger color-boton'
               onClick={handleVolverAtras}
             >
               Volver atrás

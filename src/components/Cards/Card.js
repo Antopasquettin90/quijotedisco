@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Card({ imageSource, title, url, prices, quantity, description }) {
   return (
-    <div className="card cols-3 text-center bg-dark animate__animated animate__fadeInUp">
+    <div className="card text-center bg-dark animate__animated animate__fadeInUp">
       <div className="overflow">
         <img src={imageSource} alt="a wallpaper" className="card-img-top" />
       </div>
